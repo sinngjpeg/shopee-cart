@@ -1,5 +1,4 @@
 
-
 async function addItem(userCart, item) {
     userCart.push(item);
     return userCart;
@@ -12,10 +11,25 @@ async function deleteItem(userCart, name) {
     }
 }
 
-async function removeItem(userCart, index) {
-    const deleteIndex = index - 1; // Adjust for 0-based index
-    if (index >= 0 && index < userCart.length) {
-        userCart.splice(deleteIndex, 1);
+async function removeItem(userCart, item) {
+    const indexFound = userCart.findIndex((p) => p.name === item.name);
+
+    //2. Caso não encontre o item
+    if (indexFound == -1) {
+        console.log("item não encontrado");
+        return;
+    }
+
+    //3. item > 1 subtrair um item
+    if (userCart[indexFound].quantity > 1) {
+        userCart[indexFound].quantity -= 1;
+        return;
+    }
+
+    //4. caso item = 1 deletar o item
+    if (userCart[indexFound].quantity == 1) {
+        userCart.splice(indexFound, 1);
+        return;
     }
 }
 
