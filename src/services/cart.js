@@ -12,7 +12,12 @@ async function deleteItem(userCart, name) {
     }
 }
 
-async function removeItem(userCart, index) { }
+async function removeItem(userCart, index) {
+    const deleteIndex = index - 1; // Adjust for 0-based index
+    if (index >= 0 && index < userCart.length) {
+        userCart.splice(deleteIndex, 1);
+    }
+}
 
 async function calculateTotal(userCart) {
     console.log("\nShoppe Cart Total:")
@@ -23,7 +28,7 @@ async function calculateTotal(userCart) {
 async function displayCart(userCart) {
     console.log("Cart Items:");
     userCart.forEach((item, index) => {
-        console.log(`- ${index +1}. ${item.name}: R$${item.price} x ${item.quantity} | SubTotal: R$${item.subtotal()}`);
+        console.log(`- ${index + 1}. ${item.name}: R$${item.price} x ${item.quantity} | SubTotal: R$${item.subtotal()}`);
     });
 }
 

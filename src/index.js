@@ -13,6 +13,8 @@ const item2 = await createItem("Shirt", 20.00, 3);
 await cartService.addItem(myCart, item1);
 await cartService.addItem(myCart, item2);
 
+await cartService.removeItem(myCart, 1);
+
 // await cartService.deleteItem(myCart, item1.name);
 // await cartService.deleteItem(myCart, item2.name);
 
