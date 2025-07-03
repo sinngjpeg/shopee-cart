@@ -22,7 +22,7 @@ async function calculateTotal(userCart) {
 async function displayCart(userCart) {
     console.log("Cart Items:");
     userCart.forEach((item, index) => {
-        console.log(`- ${index +1}. ${item.name}: R$${item.price} x ${item.quantity} = SubTotal: R$${item.subtotal()}`);
+        console.log(`- ${index +1}. ${item.name}: R$${item.price} x ${item.quantity} | SubTotal: R$${item.subtotal()}`);
     });
 }
 
