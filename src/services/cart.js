@@ -19,9 +19,17 @@ async function calculateTotal(userCart) {
     console.log(result)
 }
 
+async function displayCart(userCart) {
+    console.log("Cart Items:");
+    userCart.forEach((item, index) => {
+        console.log(`- ${index +1}. ${item.name}: R$${item.price} x ${item.quantity} = SubTotal: R$${item.subtotal()}`);
+    });
+}
+
 export {
     addItem,
     deleteItem,
     removeItem,
+    displayCart,
     calculateTotal
 }
