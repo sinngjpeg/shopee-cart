@@ -15,8 +15,9 @@ async function deleteItem(userCart, name) {
 async function removeItem(userCart, index) { }
 
 async function calculateTotal(userCart) {
+    console.log("\nShoppe Cart Total:")
     const result = userCart.reduce((total, item) => total + item.subtotal(), 0);
-    console.log(result)
+    console.log(`Total: ${result}`)
 }
 
 async function displayCart(userCart) {

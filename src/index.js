@@ -18,5 +18,4 @@ await cartService.addItem(myCart, item2);
 
 await cartService.displayCart(myCart);
 
-console.log("Shoppe Cart Total:")
 await cartService.calculateTotal(myCart);
